@@ -1,7 +1,7 @@
 /**
  * 
  */
-package view;
+package edu.westga.cs3151.filesearch.view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
