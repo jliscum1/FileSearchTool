@@ -1,4 +1,4 @@
-package controller;
+package edu.westga.cs3151.filesearch.controller;
 
 import java.io.File;
 import java.util.ArrayList;
