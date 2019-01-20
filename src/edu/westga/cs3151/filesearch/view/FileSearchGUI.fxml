@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root fx:id="chooseDirectoryButton" prefHeight="500.0" prefWidth="500.0" type="AnchorPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FileSearchGUICodeBehind">
+<AnchorPane fx:id="chooseDirectoryButton" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs3151.filesearch.view.FileSearchGUICodeBehind">
    <children>
       <TextArea layoutX="38.0" layoutY="250.0" prefHeight="245.0" prefWidth="412.0" />
       <Button layoutX="14.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="141.0" text="Choose Directory" />
@@ -17,4 +17,4 @@
       <RadioButton fx:id="onlyFilesNamesRadioButton" layoutX="300.0" layoutY="62.0" mnemonicParsing="false" text="Only File Names" />
       <RadioButton fx:id="fullPathNames" layoutX="300.0" layoutY="95.0" mnemonicParsing="false" text="Full Path Names" />
    </children>
-</fx:root>
+</AnchorPane>

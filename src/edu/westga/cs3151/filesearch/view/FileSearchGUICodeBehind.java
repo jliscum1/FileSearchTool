@@ -33,6 +33,21 @@ public class FileSearchGUICodeBehind {
 
 	    @FXML
 	    private RadioButton fullPathNames;
+	    
+	    public FileSearchGUICodeBehind() {
+	    	
+	    }
+	    @FXML
+		void initialize() {
+		
 
+		}
+	   /**
+	    * TODO
+	    */
+	    @FXML
+	    void handleChooseDirectory() {
+	    	
+	    }
 
 }
