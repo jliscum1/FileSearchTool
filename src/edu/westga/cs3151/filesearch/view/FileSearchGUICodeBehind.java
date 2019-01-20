@@ -13,41 +13,6 @@ import javafx.scene.layout.AnchorPane;
  *
  */
 public class FileSearchGUICodeBehind {
-	 	@FXML
-	    private AnchorPane chooseDirectoryButton;
-
-	    @FXML
-	    private TextField patternMatchTextFlied;
-
-	    @FXML
-	    private RadioButton selectAllRadioButton;
-
-	    @FXML
-	    private RadioButton directoriesOnlyRadioButton;
-
-	    @FXML
-	    private RadioButton filesOnlyRadioButton;
-
-	    @FXML
-	    private RadioButton onlyFilesNamesRadioButton;
-
-	    @FXML
-	    private RadioButton fullPathNames;
-	    
-	    public FileSearchGUICodeBehind() {
-	    	
-	    }
-	    @FXML
-		void initialize() {
-		
-
-		}
-	   /**
-	    * TODO
-	    */
-	    @FXML
-	    void handleChooseDirectory() {
-	    	
-	    }
+	 
 
 }
