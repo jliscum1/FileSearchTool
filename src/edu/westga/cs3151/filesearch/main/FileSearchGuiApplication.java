@@ -9,7 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class FileSearchGuiApplication extends Application  {
-	private static final String WINDOW_TITLE = "Project 4 By Jeremiah Liscum";
+	private static final String WINDOW_TITLE = "Project One By Jeremiah Liscum";
 	private static final String GUI_FXML = "../view/FileSearchGUI.fxml";
 
 	/**

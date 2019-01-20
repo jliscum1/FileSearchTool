@@ -3,7 +3,7 @@
  */
 package edu.westga.cs3151.filesearch.view;
 
-import edu.westga.cs3211.time_management.model.Calendar;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,14 +38,16 @@ public class FileSearchGUICodeBehind {
 	    @FXML
 	    private RadioButton fullPathNames;
 
-	    @FXML
-	    void handleChooseDirectory(ActionEvent event) {
-
-	    }
-	    @FXML
+	  	 @FXML
 	    void initialize() {
 	    	
 	        
 	    }
+	  	 @FXML
+		 void handleChooseDirectory(ActionEvent event) {
+
+		} 
+
+	  	    
 
 }
