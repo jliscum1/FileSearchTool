@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.DirectoryChooser;
 
 /**
@@ -47,25 +48,64 @@ public class FileSearchGUICodeBehind {
 	@FXML
 	void initialize() {
 		this.directoryTree = new DirectoryTree();
+		this.setUpToggleGroupOne();
+		this.setUpToggleGroupTwo();
+		
+		
+		
+	}
+
+	private void setUpToggleGroupTwo() {
+		ToggleGroup groupTwo = new ToggleGroup();
+		this.onlyFilesNamesRadioButton.setToggleGroup(groupTwo);
+		this.fullPathNames.setToggleGroup(groupTwo);
+	}
+
+	private void setUpToggleGroupOne() {
+		ToggleGroup groupOne = new ToggleGroup();
+		this.selectAllRadioButton.setToggleGroup(groupOne);
+		this.directoriesOnlyRadioButton.setToggleGroup(groupOne);
+		this.filesOnlyRadioButton.setToggleGroup(groupOne);
 	}
 
 	@FXML
 	void handleChooseDirectory(ActionEvent event) {
+		
 		DirectoryChooser name = new DirectoryChooser();
 
 		File folder = name.showDialog(((Node) event.getTarget()).getScene().getWindow());
 
 		if (folder != null) {
 			this.directoryTree.clearList();
-			this.directoryTree.addFiles(folder);
-			if (fullPathNames.isSelected()) {
-				for (String currName : this.directoryTree.getList()) {
-					this.fileSearchTextArea.setText(currName);
-				}
-				
-			}
+			this.radioButtonSelectionForGroupOne(folder);
+			this.fileSearchTextArea.setText(this.outPut());
+			
+			
 		}
+		
+	}
+	private void radioButtonSelectionForGroupOne(File folder) {
+		
+		if(this.selectAllRadioButton.isSelected()) {
+			this.directoryTree.GetAllFiles(folder);
+		}
+		if(this.directoriesOnlyRadioButton.isSelected()) {
+			this.directoryTree.GetOnlyDirectories(folder);
+		}
+		if(this.filesOnlyRadioButton.isSelected()) {
+			this.directoryTree.GetOnlyFiles(folder);
+		}
+		
+		
+	}
 
+	private String outPut() {
+		String outPut = "";
+		if(this.selectAllRadioButton.isSelected()) {
+		
+		}
+		return outPut;
+		
 	}
 
 }
