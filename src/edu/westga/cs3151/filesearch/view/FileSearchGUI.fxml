@@ -6,9 +6,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane  prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs3151.filesearch.view.FileSearchGUICodeBehind">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs3151.filesearch.view.FileSearchGUICodeBehind">
    <children>
-      <TextArea editable="false" layoutX="38.0" layoutY="250.0" prefHeight="245.0" prefWidth="412.0" />
+      <TextArea fx:id="fileSearchTextArea" editable="true" layoutX="38.0" layoutY="250.0" prefHeight="245.0" prefWidth="412.0" />
       <Button fx:id="chooseDirectoryButton" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleChooseDirectory" prefHeight="25.0" prefWidth="141.0" text="Choose Directory" />
       <TextField fx:id="patternMatchTextFlied" layoutX="250.0" layoutY="21.0" prefHeight="25.0" prefWidth="231.0" />
       <RadioButton fx:id="selectAllRadioButton" layoutX="26.0" layoutY="62.0" mnemonicParsing="false" text="Select All" />
