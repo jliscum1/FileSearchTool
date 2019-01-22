@@ -6,6 +6,7 @@ package edu.westga.cs3151.filesearch.view;
 import java.io.File;
 
 import edu.westga.cs3151.filesearch.controller.DirectoryTree;
+import edu.westga.cs3151.filesearch.formatter.OutPutFormatter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -44,10 +45,12 @@ public class FileSearchGUICodeBehind {
 	@FXML
 	private TextArea fileSearchTextArea;
 	private DirectoryTree directoryTree;
+	private OutPutFormatter outPutFormatter;
 
 	@FXML
 	void initialize() {
 		this.directoryTree = new DirectoryTree();
+		this.outPutFormatter = new OutPutFormatter();
 		this.setUpToggleGroupOne();
 		this.setUpToggleGroupTwo();
 		
@@ -101,8 +104,12 @@ public class FileSearchGUICodeBehind {
 
 	private String outPut() {
 		String outPut = "";
-		if(this.selectAllRadioButton.isSelected()) {
+		if(this.onlyFilesNamesRadioButton.isSelected()) {
+		 outPut = this.outPutFormatter.outPutForOnlyFileNames(this.directoryTree.getList()); 	
 		
+		}
+		else {
+			outPut = this.outPutFormatter.outPutForFullPathNames(this.directoryTree.getList());
 		}
 		return outPut;
 		
