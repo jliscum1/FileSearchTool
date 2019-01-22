@@ -53,9 +53,7 @@ public class FileSearchGUICodeBehind {
 		this.outPutFormatter = new OutPutFormatter();
 		this.setUpToggleGroupOne();
 		this.setUpToggleGroupTwo();
-		
-		
-		
+
 	}
 
 	private void setUpToggleGroupTwo() {
@@ -73,46 +71,63 @@ public class FileSearchGUICodeBehind {
 
 	@FXML
 	void handleChooseDirectory(ActionEvent event) {
-		
+
 		DirectoryChooser name = new DirectoryChooser();
 
 		File folder = name.showDialog(((Node) event.getTarget()).getScene().getWindow());
 
 		if (folder != null) {
 			this.directoryTree.clearList();
-			this.radioButtonSelectionForGroupOne(folder);
-			this.fileSearchTextArea.setText(this.outPut());
-			
-			
+			if (this.patternMatchTextFlied.getText().isEmpty()) {
+				this.radioButtonSelectionForGroupOne(folder);
+				this.fileSearchTextArea.setText(this.outPut());
+			}
+			if (!this.patternMatchTextFlied.getText().isEmpty()) {
+				this.radioButtonSelectionForGroupOne(folder);
+				this.fileSearchTextArea.setText(this.outPutForSearch());
+			}
 		}
-		
+
 	}
+
 	private void radioButtonSelectionForGroupOne(File folder) {
-		
-		if(this.selectAllRadioButton.isSelected()) {
+
+		if (this.selectAllRadioButton.isSelected()) {
 			this.directoryTree.GetAllFiles(folder);
 		}
-		if(this.directoriesOnlyRadioButton.isSelected()) {
+		if (this.directoriesOnlyRadioButton.isSelected()) {
 			this.directoryTree.GetOnlyDirectories(folder);
 		}
-		if(this.filesOnlyRadioButton.isSelected()) {
+		if (this.filesOnlyRadioButton.isSelected()) {
 			this.directoryTree.GetOnlyFiles(folder);
 		}
-		
-		
+
 	}
 
 	private String outPut() {
 		String outPut = "";
-		if(this.onlyFilesNamesRadioButton.isSelected()) {
-		 outPut = this.outPutFormatter.outPutForOnlyFileNames(this.directoryTree.getList()); 	
-		
-		}
-		else {
+		if (this.onlyFilesNamesRadioButton.isSelected()) {
+			outPut = this.outPutFormatter.outPutForOnlyFileNames(this.directoryTree.getList());
+
+		} else {
 			outPut = this.outPutFormatter.outPutForFullPathNames(this.directoryTree.getList());
 		}
 		return outPut;
-		
+
+	}
+
+	private String outPutForSearch() {
+		String outPut = "";
+		File file = new File(this.patternMatchTextFlied.getText());
+		if (this.onlyFilesNamesRadioButton.isSelected()) {
+
+			outPut = this.outPutFormatter.outPutForOnlyFileNamesAndSearchArea(this.directoryTree.getList(), file);
+
+		} else {
+
+			outPut = this.outPutFormatter.outPutForOnlyFullPathsAndSearchArea(this.directoryTree.getList(), file);
+		}
+		return outPut;
 	}
 
 }

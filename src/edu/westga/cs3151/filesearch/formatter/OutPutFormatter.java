@@ -23,6 +23,21 @@ public class OutPutFormatter {
 		}
 		return outPut;
 	}
+	public String outPutForOnlyFileNamesAndSearchArea(List<File> list, File fileToSearchBy) {
+		String outPut = "";
+		
+		return outPut;
+	}
+	public String outPutForOnlyFullPathsAndSearchArea(List<File> list, File fileToSearchBy) {
+		String outPut = "";
+		if(list.contains(fileToSearchBy)) {
+			outPut = list.get(list.indexOf(fileToSearchBy)).getAbsolutePath();
+		}
+		else {
+			outPut = "Does not have file in choosen directory";
+		}
+		return outPut;
+	}
 	
 	
 
