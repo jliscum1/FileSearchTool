@@ -25,16 +25,27 @@ public class OutPutFormatter {
 	}
 	public String outPutForOnlyFileNamesAndSearchArea(List<File> list, File fileToSearchBy) {
 		String outPut = "";
+		for(File currFile: list) {
+			if(currFile.getName().equals(fileToSearchBy.getName())) {
+				outPut = currFile.getName();
+			}
+		}
+		if(outPut.isEmpty()) {
+			outPut = "Look somewhere else bud it ain't here";
+		}
+		
 		
 		return outPut;
 	}
 	public String outPutForOnlyFullPathsAndSearchArea(List<File> list, File fileToSearchBy) {
 		String outPut = "";
-		if(list.contains(fileToSearchBy)) {
-			outPut = list.get(list.indexOf(fileToSearchBy)).getAbsolutePath();
+		for(File currFile: list) {
+			if(currFile.getAbsolutePath().equals(fileToSearchBy.getAbsolutePath())) {
+				outPut = currFile.getAbsolutePath();
+			}
 		}
-		else {
-			outPut = "Does not have file in choosen directory";
+		if(outPut.isEmpty()) {
+			outPut = "I told you it's not here maybe it's out yonder";
 		}
 		return outPut;
 	}
